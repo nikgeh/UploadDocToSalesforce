@@ -20,7 +20,7 @@ import org.apache.http.entity.mime.content.FileBody;
 public class PostRequestBuilder 
 {
 	private String filetoUpload;
-	private EntityDocument docDetails;
+	private ContentDocument docDetails;
 	private String boundary;
 	private String fileType;
 	
@@ -28,7 +28,7 @@ public class PostRequestBuilder
 	 * @param filetoUpload
 	 * @param docDetails
 	 */
-	public PostRequestBuilder(String filetoUpload, EntityDocument docDetails) {
+	public PostRequestBuilder(String filetoUpload, ContentDocument docDetails) {
 		super();
 		this.filetoUpload = filetoUpload;
 		this.docDetails = docDetails;
@@ -54,7 +54,7 @@ public class PostRequestBuilder
 	    File inpFile = new File(filetoUpload);
 	    FileBody fb;
 	    fb = new FileBody(inpFile,ContentType.create(fileType));
-		builder.addPart("Body", fb);
+		builder.addPart("VersionData", fb);
 		return builder.build();
 		
 	}

@@ -19,14 +19,14 @@ public class App
         if(args.length == 1)
         	filetoUpload = args[0];
         else
-        	filetoUpload = "/Users/aditya/Downloads/poc.pdf";
+        	filetoUpload = "Workbook1.xlsx";
         
         //Load the Properties Files 
         Configs.loadProperties();
         //Create a Entity Document which stores the details of the File 
-        EntityDocument entDoc = new EntityDocument("Twitter",Configs.getFolderId(),"png");
+		ContentDocument contentDoc = new ContentDocument(Configs.getContentDocumentId(), "testing", "test");
         //Prepare the Post Request to be sent 
-        PostRequestBuilder req = new PostRequestBuilder(filetoUpload, entDoc);
+        PostRequestBuilder req = new PostRequestBuilder(filetoUpload, contentDoc);
         try {
 			HttpService.uploadDoc(req.preparePostRequest());
 			//Read the Response received 

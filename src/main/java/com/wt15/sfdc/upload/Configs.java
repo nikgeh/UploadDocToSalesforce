@@ -18,7 +18,7 @@ public class Configs
 {
 	private static String documentRestURL;
 	private static String authToken;
-	private static String folderId;
+	private static String contentDocumentId;
 	
 	public static boolean loadProperties()
 	{
@@ -33,7 +33,7 @@ public class Configs
 			//Set the Properties to the member variables 
 			documentRestURL = prop.getProperty("documentRestURL");
 			authToken = prop.getProperty("authToken");
-			folderId = prop.getProperty("folderId");
+			contentDocumentId = prop.getProperty("contentDocumentId");
 		}
 		catch (IOException ex) 
 		{
@@ -53,8 +53,8 @@ public class Configs
 	/**
 	 * @return the folderId
 	 */
-	public static String getFolderId() {
-		return folderId;
+	public static String getContentDocumentId() {
+		return contentDocumentId;
 	}
 	
 	
